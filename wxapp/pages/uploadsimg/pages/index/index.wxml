@@ -1,0 +1,5 @@
+<view class='container'>
+  <view class='cropper'>
+    <cropper bind:getCropperImg="getCropperImg" url="{{ originUrl }}" num="{{num}}" ratio="{{ ratio }}" ></cropper> 
+  </view>
+</view>
