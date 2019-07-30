@@ -1,5 +1,5 @@
 <view class="container">
-  <view class='c_text'>可拖动，缩放，旋转控制</view>
+  <view class='c_text'>可选择留白或裁剪</view>
   <!--  剪裁框与初始图片，剪裁框监听用户手势，获取移动缩放旋转值，images通过css样式显示变化  -->
   <view style="">
       <view class='n_size'>当前尺寸:{{size}}英寸</view>

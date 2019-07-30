@@ -428,6 +428,13 @@ Page((a = {
   //2019-02-06 王庆国添加   在购买（buynow）之前上传照片  
   uploadimg: function (t) {
     let that = this;
+
+
+    wx.onMemoryWarning(function () {
+      console.log('onMemoryWarningReceive22222222222222222222222')
+    });
+  
+
     if (that.data.goods.isupload == 0) {
       that.buyNow(t);//继续购买流程
       return;
@@ -484,7 +491,7 @@ Page((a = {
       console.log(123123);
       wx.chooseImage({
         count: 9,
-        sizeType: ['original'],
+        sizeType: ['compressed'],
         sourceType: ['album', 'camera'],
         success(res) {
           let tempFiles = res.tempFiles;
@@ -497,6 +504,8 @@ Page((a = {
             })
           };
           wx.setStorageSync("imgUrl", imgUrl)
+          console.log("chooseimage num" + tempFiles);
+          console.log(tempFiles);
           wx.navigateTo({
             url: '../../uploadsimg/pages/zhanshi/zhanshi?num=' + that.options.total,
           })

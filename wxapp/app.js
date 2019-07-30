@@ -1,4 +1,4 @@
-var e = require("utils/core.js");
+﻿var e = require("utils/core.js");
 
 App({
   onShow: function() {
@@ -8,7 +8,7 @@ App({
     console.log("onlaunch:",options);
     const updateManager = wx.getUpdateManager()
     updateManager.onCheckForUpdate(function(res) {
-      // 请求完新版本信息的回调
+      // 请求完新版本信息的回调 ceshigit
       console.log(res.hasUpdate)
     });
     updateManager.onUpdateReady(function() {

@@ -53,8 +53,8 @@ Page({
     var width = ptoption.width;
     var height = ptoption.hight;
     if (width > 5 && height > 5) {
-      var width = e.width * 0.5;
-      var height = e.hight * 0.5;
+      var width = width * 0.5;
+      var height = height * 0.5;
     }
 
     wx.getSystemInfo({
@@ -272,9 +272,9 @@ Page({
 
   onUnload: function() {
     let mm = this;
-    var goodid = wx.getStorageSync('goodsid');
-    var number = mm.data.number;
-    var allhistoryimglist = mm.data.imgList;
+    var goodid = wx.getStorageSync('goodsid')
+    var number = mm.data.number
+    var allhistoryimglist = mm.data.imgList
     if (number == 1) {
       //重买
       var ii = wx.getStorageSync("uploadingnum");
@@ -327,7 +327,7 @@ Page({
     var isizeok = true;
     wx.chooseImage({
       count: 9,
-      sizeType: ['original'],
+      sizeType: ['compressed'],
       sourceType: ['album', 'camera'],
       success(res) {
         let tempFiles = res.tempFiles;
@@ -353,11 +353,7 @@ Page({
         })
 
       }
-    });
-
-
-
-
+    })
   },
 
 

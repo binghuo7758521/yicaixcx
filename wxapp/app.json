@@ -133,23 +133,18 @@
         "selectedIconPath": "static/images/tabbar/icon-1-active.png"
       },
       {
-        "pagePath": "pages/order/index",
-        "text": "我的订单",
-        "iconPath": "static/images/tabbar/icon-2.png",
-        "selectedIconPath": "static/images/tabbar/icon-2-active.png"
-      },
-      {
         "pagePath": "pages/zhengjian/pages/zjz/camera",
         "text": "制作证件照",
         "iconPath": "static/images/tabbar/icon-4.png",
         "selectedIconPath": "static/images/tabbar/icon-4-active.png"
       },
       {
-        "pagePath": "pages/commission/index",
-        "text": "分销中心",
-        "iconPath": "static/images/tabbar/icon-4.png",
-        "selectedIconPath": "static/images/tabbar/icon-4-active.png"
-      },
+        "pagePath": "pages/order/index",
+        "text": "我的订单",
+        "iconPath": "static/images/tabbar/icon-2.png",
+        "selectedIconPath": "static/images/tabbar/icon-2-active.png"
+      },      
+      
       {
         "pagePath": "pages/member/index/index",
         "text": "会员中心",

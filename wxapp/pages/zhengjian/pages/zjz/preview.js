@@ -637,9 +637,11 @@ Page({
 
             } else {
               wx.showToast({
-                title: "购买出现错误"
+                title: "购买出现错误2"
 
               })
+              console.log("errort:", t);
+              console.log("error:", t.error);
             }
           });
 
