@@ -6,10 +6,11 @@
       <view class='img_box' wx-if="{{isShow}}">
         <view class='img_Box'>
         <!--  <image class="img" src="{{ item.clipImg || item.src }}" bind:tap="goCropperImg" data-idx="{{ index }}" data-num="{{item.num}}" style='width:{{ width }}px; height:{{height}}px;' mode='aspectFill'></image> -->
-<image class="img" src="{{ item.clipImg || item.src }}" bind:tap="goCropperImg1"   data-idx="{{ index }}" data-num="{{item.num}}" style='width:{{ width }}px; height:{{height}}px;' mode='aspectFill'></image> 
+<image class="img" src="{{ item.clipImg || item.src }}" bind:tap="goCropperImg1" bindload="onImageLoadOk"  data-idx="{{ index }}" data-num="{{item.num}}" style='width:{{ width }}px; height:{{height}}px;' mode='aspectFill'></image> 
 
            <view class='img_num' wx:if="{{item.filesize<px*1024}}">像素低</view>
-         <!--   <view class='img_isok' wx:if="{{item.img_isok!=true}}">未编辑</view>-->
+      <view class='img_isok' hidden="true">未编辑</view>     
+       <view class='img_isloadok'hidden="true"  wx:if="{{item.ImageLoadOk!=1}}">正在加载..</view>
            <view class="delete-btn2" data-index="{{index}}" catchtap="deleteImg">
           <image src='../image/del.png'></image>
         </view>

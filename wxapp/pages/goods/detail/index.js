@@ -491,7 +491,7 @@ Page((a = {
       console.log(123123);
       wx.chooseImage({
         count: 9,
-        sizeType: ['compressed'],
+        sizeType: ['original'],
         sourceType: ['album', 'camera'],
         success(res) {
           let tempFiles = res.tempFiles;
@@ -515,7 +515,7 @@ Page((a = {
 
 
 
-    console.log("uploadimg");
+    console.log("uploadimg 默认选择照片结束");
 
     // that.buyNow(t);//继续购买流程
   },

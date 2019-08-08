@@ -55,6 +55,22 @@ page {
   text-align: center;
   line-height: 50rpx;  
 }
+
+.img_Box .img_isloadok{
+  width: 200rpx;
+  height: 50rpx;
+  background: #ff5555;
+  position: absolute;
+  right: 10px;
+  bottom:80px;
+  color: #fff;
+  text-align: center;
+  line-height: 50rpx;  
+}
+
+
+
+
 .img_Box .delete-btn2{
   width: 50rpx;
   height: 50rpx;

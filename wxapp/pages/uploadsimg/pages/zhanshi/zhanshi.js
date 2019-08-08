@@ -324,10 +324,18 @@ Page({
   onChooseImg: function() {
     let that = this;
     var imgpx = that.data.px;
-    var isizeok = true;
+     var isizeok = true;
+    let {
+      imgList,
+      waitUploadNum
+    } = that.data;
+
+
+
+
     wx.chooseImage({
       count: 9,
-      sizeType: ['compressed'],
+      sizeType: ['original'],
       sourceType: ['album', 'camera'],
       success(res) {
         let tempFiles = res.tempFiles;
@@ -338,17 +346,27 @@ Page({
 
         for (let index in tempFiles) {
       
-          that.upload_file('', tempFiles[index].path, tempFiles[index].size);       
+          //that.upload_file('', tempFiles[index].path, tempFiles[index].size);   
+
+          imgList.push({
+            src: tempFiles[index].path,
+            num: 1,
+            filesize: tempFiles[index].size
+          });  
+
 
         }      
+
+
         var allnums = 0;
         for (var a = 0; a < that.data.imgList.length; a++) {
           allnums = allnums + that.data.imgList[a].num;        
         };
         //、wx.getStorageSync("");
-        
+        wx.setStorageSync("imglength", that.data.imgList.length);
         that.setData({
           allimgnum: allnums,
+          imgList:imgList,
           waitUploadNum: tempFiles.length
         })
 
@@ -482,16 +500,25 @@ Page({
         filesize: ifilesize
       });
 
-      wx.setStorageSync("imglength", imgList.length);
+      //wx.setStorageSync("imglength", imgList.length);//移到外面 优化
 
       
-
+    /*移到外面 优化
       this.setData({
         imgList: imgList,
         waitUploadNum: --that.data.waitUploadNum
-      });
+      });*/
     console.log(" 遍历函数结束");
     //}, 500)
 
+  },
+  onImageLoadOk:function(e){
+    let that = this;
+   console.log("加载完毕"+e.currentTarget.dataset.idx);
+    console.log(e.currentTarget);
+   // that.data.imgList[e.currentTarget.dataset.idx].ImageLoadOk=1;
+   // this.setData({
+    //  imgList:that.data.imgList
+    //});
   },
 })
