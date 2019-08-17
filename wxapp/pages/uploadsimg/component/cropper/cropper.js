@@ -202,6 +202,67 @@ console.log("stv",_this.data.stv);
     Liwhite_x() {
 
     },
+    rotatetest(){
+     
+      var that = this;
+      var h=0;
+      var w=0;
+      
+
+      if (that.data.stv.rotate==0){
+        let tubili = that.data.originImg.width / that.data.originImg.height;
+        let kuangbili = that.data.height / that.data.width;
+        console.log("tubili" + tubili); 
+        console.log("kuangbili" + kuangbili); 
+
+        if (tubili < kuangbili) { //图小于图框，需要放大
+           h = that.data.height;
+          w = that.data.height * (that.data.originImg.width / that.data.originImg.height);    
+           console.log("h"+h+"  w"+w);    
+
+        } else  { 
+          h = that.data.width * (that.data.originImg.height / that.data.originImg.width) ;
+           w = that.data.width;  
+        };
+        that.data.originImg.height = h;
+        that.data.originImg.width = w;
+
+
+        this.setData({          
+          stv: {
+            
+            offsetX: that.data.originImg.height-(that.data.originImg.height-that.data.width)/2,
+            offsetY: (that.data.height-that.data.originImg.width ) / 2,
+            zoom:false,
+            distance: 0,  //两指距离
+            scale:1,
+            rotate:90
+          }
+         
+        })
+        
+      }else{
+        this.setData({
+          stv: {
+            offsetX: (that.data.width-that.data.originImg.width  )/2,
+            offsetY: (that.data.height -that.data.originImg.height  ) / 2,
+            zoom: false,
+            distance: 0,  //两指距离
+            scale: 1,
+            rotate: 0
+          }
+        }) 
+
+      }
+      
+      console.log("stv:", this.data.stv);
+      console.log("data:", this.data);
+      console.log("data.originImg :", this.data.originImg);
+  
+
+
+
+    },
     rotate() {
 
       this.setData({
